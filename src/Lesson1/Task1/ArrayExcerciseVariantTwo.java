@@ -1,5 +1,14 @@
 package Lesson1.Task1;
 
+/*В массиве целых чисел определить сумму элементов, состоящих на
+чётных позициях.
+*/
+
+/**
+ * @author Andrii Prokofiev
+ * @version 1.0
+ */
+
 public class ArrayExcerciseVariantTwo {
     public static void main(String[] args) {
         ArrayExcerciseVariantTwo arrayExcerciseVariantTwo = new ArrayExcerciseVariantTwo();
@@ -9,10 +18,11 @@ public class ArrayExcerciseVariantTwo {
 
     public void startProgram() {
 
-       printArray(getIntArray());
+        printArray(getIntArray());
         System.out.println(getSum(getIntArray()));
 
     }
+
     private static void printArray(int[] array){
         for (int i = 0; i < array.length ; i++) {
             System.out.print(array[i]+ " ");
