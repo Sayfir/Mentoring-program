@@ -15,10 +15,10 @@ package Lesson1.Task1;
  * @version 1.0
  */
 
-public class ArrayExcercises {
+public class ArrayExcerciseVariantOne {
 
     public static void main(String[] args) {
-        ArrayExcercises arrayExcercises = new ArrayExcercises();
+        ArrayExcerciseVariantOne arrayExcercises = new ArrayExcerciseVariantOne();
         arrayExcercises.startProgram();
     }
 
