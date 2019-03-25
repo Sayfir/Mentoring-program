@@ -13,20 +13,12 @@ public class ArrayExcerciseVariantTwo {
     public static void main(String[] args) {
         ArrayExcerciseVariantTwo arrayExcerciseVariantTwo = new ArrayExcerciseVariantTwo();
         arrayExcerciseVariantTwo.startProgram();
-
     }
 
     public void startProgram() {
 
-        printArray(getIntArray());
+        Tools.printArray(getIntArray());
         System.out.println(getSum(getIntArray()));
-
-    }
-
-    private static void printArray(int[] array){
-        for (int i = 0; i < array.length ; i++) {
-            System.out.print(array[i]+ " ");
-        }
     }
 
     public static int getSum(int[] array) {

@@ -16,9 +16,9 @@ public class ArrayExerciseVariantThree {
 
     private void startProgram() {
         int[] intArray = getIntArray();
-        printArray(intArray);
+        Tools.printArray(intArray);
         changeToNull(intArray);
-        printArray(intArray);
+        Tools.printArray(intArray);
     }
 
     private static int[] getIntArray() {
@@ -29,12 +29,7 @@ public class ArrayExerciseVariantThree {
         return arr;
     }
 
-    private static void printArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.printf("%-3s ", array[i]);
-        }
-        System.out.printf("%n");
-    }
+
 
     private static void changeToNull(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
