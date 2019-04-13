@@ -10,54 +10,38 @@ package Lesson1.Task1;
 1. В массиве целых чисел поменять местами максимальный отрицательный
 элемент и минимальный положительный.*/
 
-/**
- * @author Andrii Prokofiev
- * @version 1.0
- */
 
 public class ArrayExcerciseVariantOne {
-
     public static void main(String[] args) {
         ArrayExcerciseVariantOne arrayExcercises = new ArrayExcerciseVariantOne();
         arrayExcercises.startProgram();
     }
-
     public void startProgram() {
-        int[] arr = getIntArray();
-        int minNegativeIndex = getMaxNegativeIndex(arr);
+        int[] arr = ArrayManipulationUtils.generateIntArray();
+        LoggingUtils.printArray(arr);
+        int maxNegativeIndex = getMaxNegativeIndex(arr);
         int minPositiveIndex = getMinPositive(arr);
-        System.out.println("Index with min neg = " + minNegativeIndex);
+        System.out.println("Index with min neg = " + maxNegativeIndex);
         System.out.println("Index with min pos = " + minPositiveIndex);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println("[" + i + "] " + arr[i]);
+        ArrayManipulationUtils.switchArrayValues(arr, maxNegativeIndex, minPositiveIndex);
+         for (int i = 0; i < arr.length; i++) {
+              System.out.println("[" + i + "] " + arr[i]);
         }
-
-        int temp = arr[minNegativeIndex];
-        arr[minNegativeIndex] = arr[minPositiveIndex];
-        arr[minPositiveIndex] = temp;
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println("[" + i + "] " + arr[i]);
-        }
-
-
     }
-
     private static int getMaxNegativeIndex(int[] array) {
-        int min = array[0];
+        int min = 0;
         int minIndex = -1;
-        for (int index = 0; index < array.length; index++) {
-            if (array[index] < 0 && array[index] < min) {
-                min = array[index];
-                minIndex = index;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0 && array[i] < min) {
+                min = array[i];
+                minIndex = i;
             }
         }
         return minIndex;
     }
-
     private static int getMinPositive(int[] array) {
         int min = Integer.MAX_VALUE;
-        int minIndex = -1;
+        int minIndex = 0;
 
         for (int index = 0; index < array.length; index++) {
             if (array[index] > 0 && array[index] < min) {
@@ -67,16 +51,6 @@ public class ArrayExcerciseVariantOne {
         }
         return minIndex;
     }
-
-    private static int[] getIntArray() {
-        int[] arr = new int[20];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (-10) + (int) (Math.random() * ((20) + 1));
-        }
-        return arr;
-    }
-
-
 }
 
 
